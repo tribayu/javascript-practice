@@ -1,3 +1,5 @@
+//DASAR
+
 // soal 1 menentuka bilangan positif atau negarif
 
 function soal1(angka){
@@ -17,6 +19,8 @@ soal1(0);
 
 console.log();
 
+
+//SEDERHANA
 // soal 2 apakah sebuah angka genap atau ganjil
 
 function soal2(angka){
@@ -31,3 +35,28 @@ function soal2(angka){
 soal2(2);
 soal2(9);
 soal2(5);
+
+
+console.log();
+//MULTIPLE CONDITIONS
+
+// Buat fungsi untuk mengkategorikan usia:
+// - "Anak-anak" (0-12)
+// - "Remaja" (13-19)
+// - "Dewasa" (20+)
+
+function kategoriusia(usia){
+    if(usia <= 12) {
+        return "anak-anak";
+    } else if (usia >= 13 && usia <= 19) {
+        return "remaja";
+    } else {
+        return "dewasa";
+    }
+
+}
+
+console.log(kategoriusia(15));
+console.log(kategoriusia(9));
+  
+  

@@ -38,9 +38,11 @@ soal2(5);
 
 
 console.log();
+
+
 //MULTIPLE CONDITIONS
 
-// Buat fungsi untuk mengkategorikan usia:
+//fungsi untuk mengkategorikan usia:
 // - "Anak-anak" (0-12)
 // - "Remaja" (13-19)
 // - "Dewasa" (20+)
@@ -58,5 +60,19 @@ function kategoriusia(usia){
 
 console.log(kategoriusia(15));
 console.log(kategoriusia(9));
-  
-  
+
+console.log()
+//fungsi untuk mengkategorikan suhu
+function kategorisuhu(suhu) {
+    if (suhu <= 6 ) {
+        return "sangat dingin";
+    } else if (suhu > 10 && suhu <= 26) {
+        return "sejuk";
+    } else {
+        return "panas";
+    }
+}
+
+console.log(kategorisuhu(3));
+console.log(kategorisuhu(18));
+console.log(kategorisuhu(31));

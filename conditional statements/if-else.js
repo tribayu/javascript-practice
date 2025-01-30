@@ -42,7 +42,7 @@ console.log();
 
 //MULTIPLE CONDITIONS
 
-//fungsi untuk mengkategorikan usia:
+// 1.fungsi untuk mengkategorikan usia:
 // - "Anak-anak" (0-12)
 // - "Remaja" (13-19)
 // - "Dewasa" (20+)
@@ -62,7 +62,8 @@ console.log(kategoriusia(15));
 console.log(kategoriusia(9));
 
 console.log()
-//fungsi untuk mengkategorikan suhu
+
+// 2.fungsi untuk mengkategorikan suhu
 function kategorisuhu(suhu) {
     if (suhu <= 6 ) {
         return "sangat dingin";
@@ -76,3 +77,22 @@ function kategorisuhu(suhu) {
 console.log(kategorisuhu(3));
 console.log(kategorisuhu(18));
 console.log(kategorisuhu(31));
+
+console.log()
+
+//fungsi menghitung diskon
+function hitungdiskon(totalbelaja){
+    if(totalbelaja < 100000) {
+        return "0% (tidak ada diskon)";
+            return "5%";
+        } else if (totalbelaja <1000000) {
+            return "10%";
+        } else {
+            return "15%";
+        }
+ }
+
+ console.log(hitungdiskon(90000));
+ console.log(hitungdiskon(350000));
+ console.log(hitungdiskon(900000));
+ console.log(hitungdiskon(1200000));

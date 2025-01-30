@@ -80,7 +80,7 @@ console.log(kategorisuhu(31));
 
 console.log()
 
-//fungsi menghitung diskon
+// 3.fungsi menghitung diskon
 function hitungdiskon(totalbelaja){
     if(totalbelaja < 100000) {
         return "0% (tidak ada diskon)";
@@ -96,3 +96,29 @@ function hitungdiskon(totalbelaja){
  console.log(hitungdiskon(350000));
  console.log(hitungdiskon(900000));
  console.log(hitungdiskon(1200000));
+
+ console.log()
+
+
+ // 4. fungsi kategori waktu
+ function zonawaktu(jam) {
+    if (jam >= 4 && jam < 6) {
+        return "subuh";
+    } else if (jam >= 6 && jam < 12) {
+        return "pagi";
+    }else if (jam >= 12 && jam < 16) {
+        return "siang";
+    } else if (jam >= 16 && jam < 19) {
+        return "sore";
+    } else {
+        return "malam";
+    }
+        
+ }
+ 
+
+ console.log(zonawaktu(4));
+ console.log(zonawaktu(8));
+ console.log(zonawaktu(13));
+ console.log(zonawaktu(18));
+ console.log(zonawaktu(23));

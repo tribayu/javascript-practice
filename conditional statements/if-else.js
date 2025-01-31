@@ -131,30 +131,73 @@ function hitungdiskon(totalbelaja){
  // 5. kasifikasi nilai ujian
 const readline = require('readline');
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
-rl.question("masukan nilai ujian (0-100): ", (input) => {
-    let nilaiujian = input;
-
-    if (isNaN(nilaiujian) || nilaiujian < 0 || nilaiujian > 100) {
-        console.log("input tidak valid");
-    } else {
-        nilaiujian = Number(nilaiujian);
-        if (nilaiujian >= 90) {
-            console.log("sangat baik");
-        } else if (nilaiujian >= 80) {
-            console.log("baik");
-        } else if ( nilaiujian >= 70) {
-            console.log("cukup");
-        } else if (nilaiujian >= 60) {
-            console.log("kurang");
-        }else {
-            console.log("gagal");
+function klasifikasinilaiujian() {
+    const rl1 = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+    
+    rl1.question("masukan nilai ujian (0-100): ", (input) => {
+        let nilaiujian = input;
+    
+        if (isNaN(nilaiujian) || nilaiujian < 0 || nilaiujian > 100) {
+            console.log("input tidak valid");
+        } else {
+            nilaiujian = Number(nilaiujian);
+            if (nilaiujian >= 90) {
+                console.log("sangat baik");
+            } else if (nilaiujian >= 80) {
+                console.log("baik");
+            } else if ( nilaiujian >= 70) {
+                console.log("cukup");
+            } else if (nilaiujian >= 60) {
+                console.log("kurang");
+            }else {
+                console.log("gagal");
+            }
         }
-    }
+    
+        rl1.close();
+        hitungpajakpenghasilan();
+    });
+}
 
-    rl.close();
-})
+
+
+
+console.log()
+
+
+
+// 6. hitung pajak penghasilan
+function hitungpajakpenghasilan() {
+    const rl2 = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+    
+    rl2.question("masukan penghasilan tahunan: ", (inputpenghasilan) => {
+        let penghasilan = Number(inputpenghasilan);
+        let pajak = 0;
+    
+        if (isNaN(penghasilan) || penghasilan < 0) {
+            console.log("input tidak valid");
+        } else {
+            if (penghasilan < 50000000) {
+                pajak = 0;
+            } else if (penghasilan >= 50000000 && penghasilan < 250000000) {
+               pajak = penghasilan * 0.05;
+            } else if ( penghasilan >= 250000000 && penghasilan < 500000000) {
+                pajak = penghasilan * 0.15;
+            } else {
+                pajak = penghasilan * 0.25;
+            }
+            console.log(`jumlah pajak yang harus dibayar: ${pajak}`);
+        }
+    
+        rl2.close();
+    });
+}
+
+
+klasifikasinilaiujian();

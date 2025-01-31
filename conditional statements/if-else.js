@@ -122,3 +122,39 @@ function hitungdiskon(totalbelaja){
  console.log(zonawaktu(13));
  console.log(zonawaktu(18));
  console.log(zonawaktu(23));
+
+
+
+ console.log()
+
+
+ // 5. kasifikasi nilai ujian
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question("masukan nilai ujian (0-100): ", (input) => {
+    let nilaiujian = input;
+
+    if (isNaN(nilaiujian) || nilaiujian < 0 || nilaiujian > 100) {
+        console.log("input tidak valid");
+    } else {
+        nilaiujian = Number(nilaiujian);
+        if (nilaiujian >= 90) {
+            console.log("sangat baik");
+        } else if (nilaiujian >= 80) {
+            console.log("baik");
+        } else if ( nilaiujian >= 70) {
+            console.log("cukup");
+        } else if (nilaiujian >= 60) {
+            console.log("kurang");
+        }else {
+            console.log("gagal");
+        }
+    }
+
+    rl.close();
+})

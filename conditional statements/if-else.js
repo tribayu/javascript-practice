@@ -237,3 +237,51 @@ function klasifikasiUsia() {
 }
 
 klasifikasiUsia();
+
+console.log()
+
+
+const readline = require('readline');
+
+function hariDalamMinggu() {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+
+    rl.question("Masukkan angka (1-7): ", (input) => {
+        let hari = Number(input);
+
+        if (isNaN(hari) || hari < 1 || hari > 7) {
+            console.log("Input tidak valid");
+        } else {
+            switch (hari) {
+                case 1:
+                    console.log("Senin");
+                    break;
+                case 2:
+                    console.log("Selasa");
+                    break;
+                case 3:
+                    console.log("Rabu");
+                    break;
+                case 4:
+                    console.log("Kamis");
+                    break;
+                case 5:
+                    console.log("Jumat");
+                    break;
+                case 6:
+                    console.log("Sabtu");
+                    break;
+                case 7:
+                    console.log("Minggu");
+                    break;
+            }
+        }
+
+        rl.close();
+    });
+}
+
+hariDalamMinggu();

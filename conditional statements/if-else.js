@@ -201,3 +201,39 @@ function hitungpajakpenghasilan() {
 
 
 klasifikasinilaiujian();
+
+
+console.log()
+
+
+
+const readline = require('readline');
+
+function klasifikasiUsia() {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+
+    rl.question("Masukkan usia: ", (input) => {
+        let usia = Number(input);
+
+        if (isNaN(usia) || usia < 0) {
+            console.log("Input tidak valid");
+        } else {
+            if (usia < 13) {
+                console.log("Anak-anak");
+            } else if (usia >= 13 && usia < 20) {
+                console.log("Remaja");
+            } else if (usia >= 20 && usia < 60) {
+                console.log("Dewasa");
+            } else {
+                console.log("Lansia");
+            }
+        }
+
+        rl.close();
+    });
+}
+
+klasifikasiUsia();

@@ -200,22 +200,19 @@ function hitungpajakpenghasilan() {
 }
 
 
-klasifikasinilaiujian();
-
 
 console.log()
 
 
-
-const readline = require('readline');
+///////////
 
 function klasifikasiUsia() {
-    const rl = readline.createInterface({
+    const rl3 = readline.createInterface({
         input: process.stdin,
         output: process.stdout
     });
 
-    rl.question("Masukkan usia: ", (input) => {
+    rl3.question("Masukkan usia: ", (input) => {
         let usia = Number(input);
 
         if (isNaN(usia) || usia < 0) {
@@ -232,24 +229,22 @@ function klasifikasiUsia() {
             }
         }
 
-        rl.close();
+        rl3.close();
     });
 }
 
-klasifikasiUsia();
 
 console.log()
 
-
-const readline = require('readline');
+///////////////////                               
 
 function hariDalamMinggu() {
-    const rl = readline.createInterface({
+    const rl4 = readline.createInterface({
         input: process.stdin,
         output: process.stdout
     });
 
-    rl.question("Masukkan angka (1-7): ", (input) => {
+    rl4.question("Masukkan angka (1-7): ", (input) => {
         let hari = Number(input);
 
         if (isNaN(hari) || hari < 1 || hari > 7) {
@@ -280,8 +275,10 @@ function hariDalamMinggu() {
             }
         }
 
-        rl.close();
+        rl4.close();
     });
 }
 
+klasifikasinilaiujian();
+klasifikasiUsia();
 hariDalamMinggu();

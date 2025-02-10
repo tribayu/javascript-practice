@@ -1,3 +1,4 @@
+//////1
 const readline = require("readline")
 
     const rl = readline.createInterface({
@@ -26,7 +27,7 @@ const readline = require("readline")
 
     console.log()
 
-//////////////
+//////////////2
 
 rl.question("Masukkan angka (1-12) untuk bulan: ", function (input) {
     let bulan = parseInt(input);
@@ -47,6 +48,35 @@ rl.question("Masukkan angka (1-12) untuk bulan: ", function (input) {
         default: console.log("Bulan tidak valid");
     }
 
-    rl.close();
+    /////3
+    rl.question("Masukkan angka pertama: ", function (angka1) {
+        rl.question("Masukkan operator (+, -, *, /): ", function (operator) {
+            rl.question("Masukkan angka kedua: ", function (angka2) {
+                let num1 = parseFloat(angka1);
+                let num2 = parseFloat(angka2);
+                let hasil;
+
+                switch (operator) {
+                    case "+": hasil = num1 + num2; break;
+                    case "-": hasil = num1 - num2; break;
+                    case "*": hasil = num1 * num2; break;
+                    case "/": 
+                        if (num2 !== 0) {
+                            hasil = num1 / num2;
+                        } else {
+                            hasil = "Tidak bisa dibagi dengan nol!";
+                        }
+                        break;
+                    default:
+                        hasil = "Operator tidak valid";
+                }
+
+                console.log("Hasil:", hasil);
+                rl.close();
+            });
+        });
+    });
    });
 });
+
+

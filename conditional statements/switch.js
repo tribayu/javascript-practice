@@ -102,7 +102,34 @@ rl.question("Masukkan usia Anda: ", function (usia) {
     }
 
     console.log("Kategori usia:", kategori);
+           
+    ///5
+    rl.question("Masukkan panjang sisi pertama: ", function (sisi1) {
+        rl.question("Masukkan panjang sisi kedua: ", function (sisi2) {
+            rl.question("Masukkan panjang sisi ketiga: ", function (sisi3) {
+                let a = parseFloat(sisi1);
+                let b = parseFloat(sisi2);
+                let c = parseFloat(sisi3);
+
+                let jenisSegitiga;
+
+                if (a + b > c && a + c > b && b + c > a) {
+                    if (a === b && b === c) {
+                        jenisSegitiga = "Segitiga Sama Sisi";
+                    } else if (a === b || a === c || b === c) {
+                        jenisSegitiga = "Segitiga Sama Kaki";
+                    } else {
+                        jenisSegitiga = "Segitiga Sembarang";
+                    }
+                } else {
+                    jenisSegitiga = "Bukan segitiga (tidak memenuhi aturan segitiga)";
+                }
+
+                console.log("Jenis segitiga:", jenisSegitiga);
                 rl.close();
+            });
+        });
+    });
             });
         });
     });

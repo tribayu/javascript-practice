@@ -72,11 +72,42 @@ rl.question("Masukkan angka (1-12) untuk bulan: ", function (input) {
                 }
 
                 console.log("Hasil:", hasil);
+
+                console.log();
+
+///4
+
+rl.question("Masukkan usia Anda: ", function (usia) {
+    let umur = parseInt(usia);
+    let kategori;
+
+    switch (true) {
+        case (umur >= 0 && umur <= 5):
+            kategori = "Balita";
+            break;
+        case (umur >= 6 && umur <= 12):
+            kategori = "Anak-anak";
+            break;
+        case (umur >= 13 && umur <= 17):
+            kategori = "Remaja";
+            break;
+        case (umur >= 18 && umur <= 59):
+            kategori = "Dewasa";
+            break;
+        case (umur >= 60):
+            kategori = "Lansia";
+            break;
+        default:
+            kategori = "Usia tidak valid";
+    }
+
+    console.log("Kategori usia:", kategori);
                 rl.close();
             });
         });
     });
    });
+});
 });
 
 

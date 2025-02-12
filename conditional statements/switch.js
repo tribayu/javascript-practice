@@ -1,140 +1,110 @@
-//////1
-const readline = require("readline")
+const readline = require("readline");
 
-    const rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout
-    });
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
-    rl.question("Masukkan nama hari: ", function (inputhari) {
-        let hari = inputhari.toLowerCase();
-        switch (hari) {
-            case "sabtu":
-            case "minggu":
-                 console.log("ini akhir pekan");
-                  break;
-                 case "senin":
-                 case "selasa":
-                 case "rabu":
-                 case "kamis":
-                 case "jumat":
-                    console.log("ini hari kerja");
-                    break;
-                    default:
-                    console.log("hari tidak di kenal");
-         }
-         
-
-    console.log()
-
-//////////////2
-
-rl.question("Masukkan angka (1-12) untuk bulan: ", function (input) {
-    let bulan = parseInt(input);
-
-    switch (bulan) {
-        case 1: console.log("Januari"); break;
-        case 2: console.log("Februari"); break;
-        case 3: console.log("Maret"); break;
-        case 4: console.log("April"); break;
-        case 5: console.log("Mei"); break;
-        case 6: console.log("Juni"); break;
-        case 7: console.log("Juli"); break;
-        case 8: console.log("Agustus"); break;
-        case 9: console.log("September"); break;
-        case 10: console.log("Oktober"); break;
-        case 11: console.log("November"); break;
-        case 12: console.log("Desember"); break;
-        default: console.log("Bulan tidak valid");
+// 1. Menentukan hari kerja atau akhir pekan
+rl.question("Masukkan nama hari: ", (inputHari) => {
+    let hari = inputHari.toLowerCase();
+    if (hari === "sabtu" || hari === "minggu") {
+        console.log("Ini akhir pekan");
+    } else if (["senin", "selasa", "rabu", "kamis", "jumat"].includes(hari)) {
+        console.log("Ini hari kerja");
+    } else {
+        console.log("Hari tidak dikenal");
     }
 
-    /////3
-    rl.question("Masukkan angka pertama: ", function (angka1) {
-        rl.question("Masukkan operator (+, -, *, /): ", function (operator) {
-            rl.question("Masukkan angka kedua: ", function (angka2) {
-                let num1 = parseFloat(angka1);
-                let num2 = parseFloat(angka2);
-                let hasil;
+    // 2. Menentukan nama bulan
+    rl.question("Masukkan angka (1-12) untuk bulan: ", (input) => {
+        let bulan = parseInt(input);
+        const namaBulan = [
+            "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+            "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+        ];
+        console.log(bulan >= 1 && bulan <= 12 ? namaBulan[bulan - 1] : "Bulan tidak valid");
 
-                switch (operator) {
-                    case "+": hasil = num1 + num2; break;
-                    case "-": hasil = num1 - num2; break;
-                    case "*": hasil = num1 * num2; break;
-                    case "/": 
-                        if (num2 !== 0) {
-                            hasil = num1 / num2;
-                        } else {
-                            hasil = "Tidak bisa dibagi dengan nol!";
-                        }
-                        break;
-                    default:
-                        hasil = "Operator tidak valid";
-                }
+        // 3. Kalkulator sederhana
+        rl.question("Masukkan angka pertama: ", (angka1) => {
+            rl.question("Masukkan operator (+, -, *, /): ", (operator) => {
+                rl.question("Masukkan angka kedua: ", (angka2) => {
+                    let num1 = parseFloat(angka1);
+                    let num2 = parseFloat(angka2);
+                    let hasil;
 
-                console.log("Hasil:", hasil);
-
-                console.log();
-
-///4
-
-rl.question("Masukkan usia Anda: ", function (usia) {
-    let umur = parseInt(usia);
-    let kategori;
-
-    switch (true) {
-        case (umur >= 0 && umur <= 5):
-            kategori = "Balita";
-            break;
-        case (umur >= 6 && umur <= 12):
-            kategori = "Anak-anak";
-            break;
-        case (umur >= 13 && umur <= 17):
-            kategori = "Remaja";
-            break;
-        case (umur >= 18 && umur <= 59):
-            kategori = "Dewasa";
-            break;
-        case (umur >= 60):
-            kategori = "Lansia";
-            break;
-        default:
-            kategori = "Usia tidak valid";
-    }
-
-    console.log("Kategori usia:", kategori);
-           
-    ///5
-    rl.question("Masukkan panjang sisi pertama: ", function (sisi1) {
-        rl.question("Masukkan panjang sisi kedua: ", function (sisi2) {
-            rl.question("Masukkan panjang sisi ketiga: ", function (sisi3) {
-                let a = parseFloat(sisi1);
-                let b = parseFloat(sisi2);
-                let c = parseFloat(sisi3);
-
-                let jenisSegitiga;
-
-                if (a + b > c && a + c > b && b + c > a) {
-                    if (a === b && b === c) {
-                        jenisSegitiga = "Segitiga Sama Sisi";
-                    } else if (a === b || a === c || b === c) {
-                        jenisSegitiga = "Segitiga Sama Kaki";
-                    } else {
-                        jenisSegitiga = "Segitiga Sembarang";
+                    switch (operator) {
+                        case "+": hasil = num1 + num2; break;
+                        case "-": hasil = num1 - num2; break;
+                        case "*": hasil = num1 * num2; break;
+                        case "/": hasil = num2 !== 0 ? num1 / num2 : "Tidak bisa dibagi dengan nol!"; break;
+                        default: hasil = "Operator tidak valid";
                     }
-                } else {
-                    jenisSegitiga = "Bukan segitiga (tidak memenuhi aturan segitiga)";
-                }
+                    console.log("Hasil:", hasil);
 
-                console.log("Jenis segitiga:", jenisSegitiga);
-                rl.close();
+                    // 4. Kategori usia
+                    rl.question("Masukkan usia Anda: ", (usia) => {
+                        let umur = parseInt(usia);
+                        let kategori =
+                            umur >= 0 && umur <= 5 ? "Balita" :
+                            umur >= 6 && umur <= 12 ? "Anak-anak" :
+                            umur >= 13 && umur <= 17 ? "Remaja" :
+                            umur >= 18 && umur <= 59 ? "Dewasa" :
+                            umur >= 60 ? "Lansia" : "Usia tidak valid";
+                        console.log("Kategori usia:", kategori);
+
+                        // 5. Menentukan jenis segitiga
+                        rl.question("Masukkan panjang sisi pertama: ", (sisi1) => {
+                            rl.question("Masukkan panjang sisi kedua: ", (sisi2) => {
+                                rl.question("Masukkan panjang sisi ketiga: ", (sisi3) => {
+                                    let a = parseFloat(sisi1);
+                                    let b = parseFloat(sisi2);
+                                    let c = parseFloat(sisi3);
+                                    let jenisSegitiga =
+                                        a + b > c && a + c > b && b + c > a ?
+                                            (a === b && b === c ? "Segitiga Sama Sisi" :
+                                                (a === b || a === c || b === c ? "Segitiga Sama Kaki" : "Segitiga Sembarang")) :
+                                            "Bukan segitiga (tidak memenuhi aturan segitiga)";
+                                    console.log("Jenis segitiga:", jenisSegitiga);
+
+                                    // 6. Menghitung luas bangun datar
+                                    rl.question("Pilih bangun datar (persegi, persegi panjang, segitiga): ", (bangun) => {
+                                        let bentuk = bangun.toLowerCase();
+
+                                        switch (bentuk) {
+                                            case "persegi":
+                                                rl.question("Masukkan sisi: ", (sisi) => {
+                                                    console.log("Luas persegi:", sisi * sisi);
+                                                    rl.close();
+                                                });
+                                                break;
+                                            case "persegi panjang":
+                                                rl.question("Masukkan panjang: ", (panjang) => {
+                                                    rl.question("Masukkan lebar: ", (lebar) => {
+                                                        console.log("Luas persegi panjang:", panjang * lebar);
+                                                        rl.close();
+                                                    });
+                                                });
+                                                break;
+                                            case "segitiga":
+                                                rl.question("Masukkan alas: ", (alas) => {
+                                                    rl.question("Masukkan tinggi: ", (tinggi) => {
+                                                        console.log("Luas segitiga:", (alas * tinggi) / 2);
+                                                        rl.close();
+                                                    });
+                                                });
+                                                break;
+                                            default:
+                                                console.log("Bangun datar tidak dikenal");
+                                                rl.close();
+                                        }
+                                    });
+                                });
+                            });
+                        });
+                    });
+                });
             });
         });
     });
-            });
-        });
-    });
-   });
 });
-});
-
-

@@ -8,8 +8,17 @@ console.log(typeof stringType, typeof numberType, typeof booleanType, typeof obj
 console.log(Array.isArray(arrayType));
 
 console.log();
+
 ///1
 let easy1 = "123";
 let easy2 = 123;
 console.log(typeof easy1);
 console.log(typeof easy2);
+
+console.log();
+
+////2
+let medium1 = "10" + 7;
+let medium2 = "10" - 7;
+console.log(medium1);
+console.log(medium2);

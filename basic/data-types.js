@@ -30,3 +30,9 @@ let hard1 = !!"hello";
 let hard2 = !!1;
 console.log(hard1);
 console.log(hard2);
+
+console.log();
+
+////4
+let hard3 = {} + [];
+console.log(hard3);

@@ -22,3 +22,11 @@ let medium1 = "10" + 7;
 let medium2 = "10" - 7;
 console.log(medium1);
 console.log(medium2);
+
+console.log();
+
+////3
+let hard1 = !!"hello";
+let hard2 = !!1;
+console.log(hard1);
+console.log(hard2);

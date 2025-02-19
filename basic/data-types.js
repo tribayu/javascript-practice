@@ -36,3 +36,9 @@ console.log();
 ////4
 let hard3 = {} + [];
 console.log(hard3);
+
+console.log();
+
+////5
+let hard4 = "98";
+console.log(Number(hard4));

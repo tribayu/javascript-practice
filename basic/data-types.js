@@ -42,3 +42,9 @@ console.log();
 ////5
 let hard4 = "98";
 console.log(Number(hard4));
+
+console.log();
+
+/////6
+let extra = null + 1;
+console.log(extra);

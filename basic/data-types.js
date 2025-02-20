@@ -48,3 +48,9 @@ console.log();
 /////6
 let extra = null + 1;
 console.log(extra);
+
+console.log();
+
+/////6
+let extra1 = undefined + 1;
+console.log(extra1);

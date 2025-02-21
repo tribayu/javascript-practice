@@ -30,3 +30,12 @@ function square(num) {
     return num * num;
 }
 console.log(square(15));
+
+console.log();
+
+//
+function isEven(num) {
+    return num % 2 === 0 ? "genap" : "ganjil";
+}
+console.log(isEven(15));
+console.log(isEven(14));

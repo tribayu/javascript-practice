@@ -33,7 +33,7 @@ console.log(square(15));
 
 console.log();
 
-//
+//fungsi untuk memeriksa ganjil genap
 function isEven(num) {
     return num % 2 === 0 ? "genap" : "ganjil";
 }

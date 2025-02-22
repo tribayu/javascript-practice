@@ -39,3 +39,12 @@ function isEven(num) {
 }
 console.log(isEven(15));
 console.log(isEven(14));
+
+console.log();
+
+function maxnumber (a, b) {
+    return a > b ? a : b;
+}
+console.log(maxnumber(5, 19));
+
+

@@ -10,3 +10,13 @@ console.log( a > b, a < b, a == b, a === b, a != b );
 let x = true;
 let y = false;
 console.log(x && y, x || y, !x);
+
+console.log();
+
+////
+let d = 10;
+let e = 4;
+console.log(d % e);
+
+console.log();
+

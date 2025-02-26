@@ -42,6 +42,7 @@ console.log(isEven(14));
 
 console.log();
 
+//////fungsi ngembalikan angka terbesar
 function maxnumber (a, b) {
     return a > b ? a : b;
 }

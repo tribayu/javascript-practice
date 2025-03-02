@@ -56,3 +56,12 @@ function hitungdiskon(total){
 }
 console.log(hitungdiskon(60000));
 console.log(hitungdiskon(40000));
+
+console.log();
+
+/////konversi suhu
+function tofahenheit(celsius) {
+    return (celsius * 9/5) + 32
+}
+console.log(tofahenheit(0));
+console.log(tofahenheit(100));

@@ -48,4 +48,11 @@ function maxnumber (a, b) {
 }
 console.log(maxnumber(5, 19));
 
+console.log();
 
+////hitunng diskon
+function hitungdiskon(total){
+    return total > 50000 ? total * 0.9 : total; 
+}
+console.log(hitungdiskon(60000));
+console.log(hitungdiskon(40000));

@@ -31,3 +31,18 @@ let objectType = { name: "Alice", age: 30 };
 
 console.log(typeof stringType, typeof numberType, typeof booleanType, typeof objectType);
 console.log(Array.isArray(arrayType)); // Mengecek apakah array
+
+
+
+function functionScopeExample() {
+    if (true) {
+        var functionVar = "Saya dalam function!";
+        let blockVar = "Saya dalam block!";
+        const blockConst = "Saya juga dalam block!";
+    }
+    console.log(functionVar); // Bisa diakses
+    // console.log(blockVar); // Error: blockVar tidak terdefinisi di luar blok
+    // console.log(blockConst); // Error: blockConst tidak bisa diakses di luar blok
+}
+
+functionScopeExample();

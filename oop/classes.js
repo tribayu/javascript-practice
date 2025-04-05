@@ -16,3 +16,21 @@ class Dog extends Animal {
 
 const dog = new Dog("Buddy");
 dog.speak();
+
+
+
+//////////////////////////
+
+
+class User {
+    constructor(username) {
+        this.username = username;
+    }
+
+    greet() {
+        console.log(`Welcome, ${this.username}!`);
+    }
+}
+
+const user1 = new User("neo123");
+user1.greet();

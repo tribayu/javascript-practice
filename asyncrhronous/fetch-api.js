@@ -9,3 +9,21 @@ async function fetchUsers() {
 }
 
 fetchUsers();
+
+
+
+////////////////////
+
+
+async function getUser() {
+    try {
+        const res = await fetch("https://jsonplaceholder.typicode.com/users/1");
+        const user = await res.json();
+        console.log(user);
+    } catch (err) {
+        console.error("Error:", err);
+    }
+}
+
+getUser();
+

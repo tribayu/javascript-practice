@@ -8,3 +8,14 @@ async function getData() {
 }
 
 getData();
+
+
+
+///////////////////
+
+async function showMessage() {
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    console.log("Async/Await executed after 1 second");
+}
+
+showMessage();
